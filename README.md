@@ -2,10 +2,10 @@
 
 ## Implementazione semafori in disastrOS
 
-- [ ] **Gestione errori/success**
+- [x] **Gestione errori/success**
   - handle_error
   - handle_success
-- [ ] **Funzione internal_semOpen()**
+- [x] **Funzione internal_semOpen()**
   - verifica dell'utilizzo del semaforo con gestione errore
   - verifica della corretta apertura del semaforo
   - verifica che il semaforo non esiste

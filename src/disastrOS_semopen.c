@@ -19,8 +19,9 @@ void internal_semOpen()
 
     Semaphore *sem = SemaphoreList_byId(&semaphores_list, sem_id);
     //controllo l'apertura del semaforo
-    if (sem == 0)
-    {                                             //caso in cui il semaforo non esiste
+    if (!sem)
+    {
+        //caso in cui il semaforo non esiste
         sem = Semaphore_alloc(sem_id, sem_count); //alloco il semaforo
         //devo controllare se l'allocazione e' avvenuta con successo
         if (!sem)
@@ -55,6 +56,6 @@ void internal_semOpen()
     //inserisco il ptr del desc nella struct sem
     List_insert(&sem->descriptors, sem->descriptors.last, (ListItem *)desc_ptr);
 
-    //setto retval = al descrittore
+    //setto retval
     running->syscall_retvalue = desc->fd;
 }
