@@ -16,6 +16,10 @@
   - inserimento del puntatore del descriptor nella struct sem
   - set di return value
 - [ ] **Funzione internal_semClose()**
+  - id del semaforo da chiudere e il rispettivo sem descriptor con gestione errori
+  - rimozione del sem descriptor dalla lista dei descriptor con gestione errori
+  - puntatore al semaforo da passare alla list_detach() con gestione errori
+  - pulizia di tutto tra cui rimozione del puntatore al fd e le varie free
 - [ ] **Funzione internal_semPost()**
 - [ ] **Funzione internal_semWait()**
 - [ ] **Test**
