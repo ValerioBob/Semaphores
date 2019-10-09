@@ -15,7 +15,7 @@
   - inserimento del descriptor nel pcb
   - inserimento del puntatore del descriptor nella struct sem
   - set di return value
-- [ ] **Funzione internal_semClose()**
+- [x] **Funzione internal_semClose()**
   - id del semaforo da chiudere e il rispettivo sem descriptor con gestione errori
   - rimozione del sem descriptor dalla lista dei descriptor con gestione errori
   - puntatore al semaforo da passare alla list_detach() con gestione errori
