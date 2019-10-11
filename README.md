@@ -21,6 +21,15 @@
   - puntatore al semaforo da passare alla list_detach() con gestione errori
   - pulizia di tutto tra cui rimozione del puntatore al fd e le varie free
 - [ ] **Funzione internal_semPost()**
+  - id del semaforo da postare e il rispettivo sem descriptor con gestione errori
+  - puntatore al semaforo da incrementare
+  - controllo se il semaforo e' occupato
+  - metto il processo in coda di ready
+  - rimuovo il descriptor dalla lista di waiting e lo metto nella lista dei descriptor 
+  - rimuovo il processo dalla lista di waiting 
+  - setto running->status a ready
+  - setto running al pcb per far partire il processo
+
 - [ ] **Funzione internal_semWait()**
 - [ ] **Test**
 
