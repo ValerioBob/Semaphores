@@ -24,7 +24,7 @@
 
   - id del semaforo da postare e il rispettivo sem descriptor con gestione errori
   - puntatore al semaforo da incrementare
-  - controllo se il semaforo e' occupato
+  - controllo del valore del semaforo
   - metto il processo in coda di ready
   - rimuovo il descriptor dalla lista di waiting e lo metto nella lista dei descriptor
   - rimuovo il processo dalla lista di waiting
@@ -32,6 +32,13 @@
   - setto running al pcb per far partire il processo
 
 - [ ] **Funzione internal_semWait()**
+  - id del semaforo da postare e il rispettivo sem descriptor con gestione errori
+  - puntatore al semaforo da decrementare
+  - controllo del valore del semaforo
+  - rimuovo il descrittore del processo dalla lista di ready
+  - inserisco il processo nella lista di waiting
+  - prendo il primo processo nella coda di ready
+  - setto running= pcb per far partire il processo
 - [ ] **Test**
 
 `
