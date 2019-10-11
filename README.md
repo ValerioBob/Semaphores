@@ -31,7 +31,7 @@
   - setto running->status a ready
   - setto running al pcb per far partire il processo
 
-- [ ] **Funzione internal_semWait()**
+- [x] **Funzione internal_semWait()**
   - id del semaforo da postare e il rispettivo sem descriptor con gestione errori
   - puntatore al semaforo da decrementare
   - controllo del valore del semaforo
