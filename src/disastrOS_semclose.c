@@ -38,7 +38,6 @@ void internal_semClose()
     SemDescriptor_free(descr);
     SemDescriptorPtr_free(descr_ptr);
     handle_success("semaphore closed");
-    running->syscall_retvalue = 0;
 
     return;
 }

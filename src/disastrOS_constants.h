@@ -34,6 +34,7 @@
 #define DSOS_ESEMDESCRDETACH -17
 #define DSOS_ESEMDESCR -18
 #define DSOS_ESEMCLOSE -19
+#define DSOS_ESEMPOST -20
 
 // syscall numbers
 #define DSOS_MAX_SYSCALLS 32

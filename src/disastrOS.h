@@ -25,6 +25,7 @@
     do                                       \
     {                                        \
         fprintf(stdout, "[DONE] %s\n", msg); \
+        running->syscall_retvalue = 0;       \
         return;                              \
     } while (0);
 // initializes the structures and spawns a fake init process
