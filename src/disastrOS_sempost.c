@@ -40,3 +40,4 @@ void internal_semPost()
         handle_success("semPost success");
         return;
     }
+}

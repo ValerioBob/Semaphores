@@ -33,7 +33,6 @@ void internal_semOpen()
         //inserimento del semaforo in lista
         List_insert(&semaphores_list, semaphores_list.last, (ListItem *)sem);
     }
-    handle_success("sem created");
 
     //creo descriptor
     SemDescriptor *desc = SemDescriptor_alloc(running->last_sem_fd, sem, running);
@@ -58,4 +57,5 @@ void internal_semOpen()
 
     //setto retval
     running->syscall_retvalue = desc->fd;
+    fprintf(stdout, "[DONE] sem open success\n");
 }
