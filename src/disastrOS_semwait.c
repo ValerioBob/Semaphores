@@ -35,8 +35,7 @@ void internal_semWait()
         PCB *pcb = (PCB *)List_detach(&ready_list, (ListItem *)ready_list.first); //prendo il primo processo ready
 
         running = (PCB *)pcb;
-
-        handle_success("sem_wait success!");
-        return;
     }
+    handle_success("sem_wait success!");
+    return;
 }

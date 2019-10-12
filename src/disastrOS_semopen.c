@@ -11,9 +11,9 @@ void internal_semOpen()
     int sem_id = running->syscall_args[0];
     int sem_count = running->syscall_args[1];
 
-    if (sem_count < 0) //verifico se il semaforo e' libero
+    if (sem_count < 0) //verifico il valore
     {
-        handle_error(DSOS_ESEMBUSY, "semaphore busy");
+        handle_error(DSOS_ESEMBUSY, "semaphore value negative \n");
         return;
     }
 

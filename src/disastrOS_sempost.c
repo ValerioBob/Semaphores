@@ -37,7 +37,7 @@ void internal_semPost()
 
         running->status = Ready;
         running = descr_ptr->descriptor->pcb;
-        handle_success("semPost success");
-        return;
     }
+    handle_success("semPost success");
+    return;
 }

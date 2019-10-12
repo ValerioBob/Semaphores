@@ -23,7 +23,7 @@ void internal_semClose()
 
     if (!sem)
     {
-        handle_error(DSOS_ESEMCLOSE, "error in semaphore pointer");
+        handle_error(DSOS_ESEMCLOSE, "error in sem_close");
         return;
     }
 
