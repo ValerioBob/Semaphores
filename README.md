@@ -39,6 +39,10 @@
   - inserisco il processo nella lista di waiting
   - prendo il primo processo nella coda di ready
   - setto running= pcb per far partire il processo
-- [ ] **Test**
-
+- [x] **Test**
+  - funzioni producer/ consumer
+  - modifica di child function
+  - aggiunta Semaphore_init() e semDescriptor_init() in disastros start
+  - aggiunta di chiamate a syscall semafori in disastros.c e dichiarazione in disastros.h
+  
 `
