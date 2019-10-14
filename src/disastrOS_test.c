@@ -39,9 +39,9 @@ void sleeperFunction(void *args)
 void childFunction(void *args)
 {
     printf("Hello, I am the child function %d\n", disastrOS_getpid());
-    int type = 0;
-    int mode = 0;
-    int fd = disastrOS_openResource(disastrOS_getpid(), type, mode);
+    // int type = 0;
+    // int mode = 0;
+    // int fd = disastrOS_openResource(disastrOS_getpid(), type, mode);
 
     printf("opening semaphores\n");
 
