@@ -6,8 +6,7 @@
 
 Sono state definite due funzioni per la gestione degli errori.
 
-handle_error stampa sullo stderr un messaggio di errore contenente il codice dell'errore (intero negativo) e un breve messaggio. Dopo la stampa setta syscall_retvalue contenuto nella struct running con valore l'errore.
-
+handle_error stampa sullo stderr un messaggio di errore contenente il codice dell'errore (intero negativo) e un breve messaggio. Dopo la stampa setta syscall_retvalue contenuto nella struct running con valore l'errore e chiama la funzione disastrOS_exit() per terminare l'esecuzione.
 handle_success invece stampa sullo stdout un messaggio contenente la syscall che ha avuto successo e successivamente setta syscall_retvalue a 0.
 
 ### internal_semOpen()
