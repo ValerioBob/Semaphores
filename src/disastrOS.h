@@ -18,6 +18,7 @@
     {                                                                 \
         fprintf(stderr, "[ERROR] error number %d, %s\n", error, msg); \
         running->syscall_retvalue = error;                            \
+        disastrOS_exit(error);                                        \
         return;                                                       \
     } while (0);
 

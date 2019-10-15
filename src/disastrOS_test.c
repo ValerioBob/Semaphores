@@ -4,13 +4,16 @@
 #include "disastrOS.h"
 #include "disastrOS_constants.h"
 
+#define SEMAPHORE_PRODUCER_VALUE 10
+#define SEMAPHORE_CONSUMER_VALUE 0
+
 //aggiunte funzioni consumer/producer
 void producer(int producer, int consumer)
 {
     for (int i = 0; i < 5; i++)
     {
         disastrOS_semWait(producer);
-        printf("I'm the producer\n\n\n\n");
+        printf("-------------------------------------I'm the producer\n\n\n\n");
         disastrOS_semPost(consumer);
     }
 }
@@ -20,7 +23,7 @@ void consumer(int producer, int consumer)
     for (int i = 0; i < 5; i++)
     {
         disastrOS_semWait(consumer);
-        printf("I'm the consumer\n\n\n\n");
+        printf("-------------------------------------I'm the consumer\n\n\n\n");
         disastrOS_semPost(producer);
     }
 }
@@ -45,22 +48,24 @@ void childFunction(void *args)
 
     printf("opening semaphores\n");
 
-    int prod_id = disastrOS_semOpen(1, 10); //semaforo 1 = producer valore 10
-    int cons_id = disastrOS_semOpen(2, 0);  // semaforo 2 = consumer valore 0
+    int prod_id_1 = disastrOS_semOpen(1, SEMAPHORE_PRODUCER_VALUE); //semaforo 1 = producer valore 10
+    int cons_id_1 = disastrOS_semOpen(2, SEMAPHORE_CONSUMER_VALUE); // semaforo 2 = consumer valore 0
+
+    // printf("PID :%d", disastrOS_getpid());
 
     if (disastrOS_getpid() % 2 == 0)
     {
-        producer(prod_id, cons_id);
+        producer(prod_id_1, cons_id_1);
     }
     else
     {
-        consumer(prod_id, cons_id);
+        consumer(prod_id_1, cons_id_1);
     }
     printf("pid=%d is terminating\n", disastrOS_getpid());
 
     printf("closing semaphores!\n");
-    disastrOS_semClose(prod_id);
-    disastrOS_semClose(cons_id);
+    disastrOS_semClose(prod_id_1);
+    disastrOS_semClose(cons_id_1);
     disastrOS_exit(disastrOS_getpid() + 1);
 }
 
